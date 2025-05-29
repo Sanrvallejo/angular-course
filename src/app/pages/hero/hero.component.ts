@@ -12,9 +12,10 @@ export class HeroComponent {
   age = signal(45);
 
   //señal computada
+  //son de solo lectura -> no tienen métodos como set o update
   heroDescription = computed(() => `${this.name()} - ${this.age()}`);
 
-  //otra señak computada con más lógica en su implementación
+  //otra señal computada con más lógica en su implementación
   capitalizedName = computed(() => {
     const capitalized = this.name().toUpperCase();
     return capitalized;
