@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavbarComponent } from "./components/shared/navbar.component";
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
+
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,5 @@ import { NavbarComponent } from "./components/shared/navbar.component";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Signlas task';
+  title = 'Bases Angular';
 }
