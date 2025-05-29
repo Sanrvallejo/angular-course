@@ -1,18 +1,27 @@
-import { Component, signal } from '@angular/core';
+import { LowerCasePipe, UpperCasePipe } from '@angular/common';
+import { Component, computed, signal } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
-  imports: [],
+  imports: [LowerCasePipe],
   templateUrl: './hero.component.html',
-  styleUrl: './hero.component.css'
+  styleUrl: './hero.component.css',
 })
 export class HeroComponent {
-
   name = signal('Ironman');
   age = signal(45);
 
+  //señal computada
+  heroDescription = computed(() => `${this.name()} - ${this.age()}`);
+
+  //otra señak computada con más lógica en su implementación
+  capitalizedName = computed(() => {
+    const capitalized = this.name().toUpperCase();
+    return capitalized;
+  });
+
   getHeroDescription() {
-    return `${this.name()} tiene ${this.age()}`
+    return `${this.name()} tiene ${this.age()}`;
   }
 
   changeHero() {
@@ -28,6 +37,4 @@ export class HeroComponent {
     this.name.set('Ironman');
     this.age.set(45);
   }
-
-
 }

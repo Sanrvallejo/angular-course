@@ -1,3 +1,8 @@
 .cont-box {
     margin: 20px;
 }
+
+dd {
+    font-weight: bold;
+    font-size: 20px;
+}
