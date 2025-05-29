@@ -1,0 +1,13 @@
+<nav>
+  <!-- Sin [] le asigno directamente el string dentro de las comillas dobles -->
+  <!-- Con el RouterLinkActive lo que hago es asignar una clase -->
+  <a 
+    routerLink="/" 
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"> <!-- Agregar propiedades al routerActive  / exact para que la ruta sea excata a la especificada-->
+        Counter 
+  </a>
+
+  <!-- Si se asigna una directiva con [] es porque contendra un valor dinámico -->
+  <a [routerLink]="['/hero']" [routerLinkActive]="['active']">Hero</a>
+</nav>
