@@ -9,18 +9,10 @@ const loadFromLocalStorage = (): Character[] => {
 
 @Injectable({ providedIn: 'root' })
 export class DragonballService {
-  name = signal('');
-  power = signal(0);
-
-  characters = signal<Character[]>([
-    { id: 1, name: 'Goku', power: 9001 },
-    { id: 2, name: 'Vegeta', power: 8000 },
-  ]);
-
+  
+  characters = signal<Character[]>(loadFromLocalStorage());
+  
   saveToLocalStorage = effect(() => {
-
-    const characters = signal<Character[]>(loadFromLocalStorage());
-
     localStorage.setItem('characters', JSON.stringify(this.characters()))
   })
 
